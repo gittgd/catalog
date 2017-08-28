@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Categories</h4>
+        	{% for category in categories %}
+						<a href="{{url_for('showCategory', catalog_id = category.id )}}">
+								<p>{{category.name}}</p>
+						</a>
+					{% endfor %}
+        </div>
+        <div class="col-lg-6">
+          <h4>{{categoryName}} ({{categoryItemsCount}} Items)</h4>
+					{% for categoryItem in categoryItems %}
+						<a href="{{url_for('showCategoryItem', catalog_id = categoryItem.category_id ,item_id = categoryItem.id )}}">
+								<p>{{categoryItem.name}}<span class="item__type">({{categoryItem.category.name}})</span></p>
+						</a>
+					{% endfor %}
+        </div>
+      </div>
+{% endblock %}

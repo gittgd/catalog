@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row marketing">
+        <div class="col-lg-50">
+          <h3>Delete items</h3>
+					<form action="#" method="post">
+									<h5>Are you sure you want to delete {{categoryItem.name}}?</h5>
+									<a href="{{url_for('showCategoryItem', catalog_id = categoryItem.category_id ,item_id = categoryItem.id )}}" class="btn btn-success">Back</a>
+									<input type="submit" value="Delete" class="btn btn-success">
+					</form>
+        </div>
+    </div>
+{% endblock %}
